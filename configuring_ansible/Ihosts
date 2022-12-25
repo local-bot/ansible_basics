@@ -1,0 +1,21 @@
+# i
+
+# children
+[db-and-web-servers]
+dbservers
+webservers
+
+[dbservers]
+database ansible_host=10.0.0.1 ansible_port=22 ansible_user=postgres
+database2 ansible_host=10.0.0.2 ansible_port=22 ansible_user=root
+ 
+''' or with variable definition
+[dbservers:vars]
+ansible_host=10.0.0.1 
+ansible_port=22 
+ansible_user=postgres
+'''
+
+[webservers]
+webserver1 ansible_host=10.0.0.100 ansible_port=22 ansible_user=root
+webserver2 ansible_host=10.0.0.200 ansible_port=22 ansible_user=root
