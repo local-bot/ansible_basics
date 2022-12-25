@@ -1,0 +1,44 @@
+---
+- name: install initial software
+  hosts: all
+
+  tasks:
+    - name: steam
+      package:
+        name: steam
+        state: present
+
+    - name: neofetch
+      package:
+        name: neofetch
+        state: present
+
+    - name: htop
+      package:
+        name: htop
+        state: present
+
+    - name: virtualbox
+      package:
+        name: virtualbox
+        state: present
+
+    - name: code
+      package:
+        name: code
+        state: present
+
+    - name: gparted
+      package:
+        name: gparted
+        state: present
+
+    - name: imager
+      package:
+        name: imager
+        state: present
+
+
+
+
+

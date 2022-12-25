@@ -1,0 +1,29 @@
+---
+
+# software list
+vars:
+  - list_of_apps:
+    - neofetch
+    - tmux
+    - htop
+
+# inatll via package
+- name: install system tools
+  hosts: all
+  tasks:
+    - name: install a lot of apps
+      package:
+        name: "{{ list_of_apps }}"
+        state: present
+
+# add flatpak repos to host?
+
+# install via flatpak
+- name: install flatpak packages
+  hosts: all
+  community.general.flatpak:
+    name:
+      - com.valvesoftware.Steam # https://flathub.org/apps/details/com.valvesoftware.Steam
+      - org.mozilla.firefox
+      - com.visualstudio.code
+      - org.raspberrypi.rpi-imager

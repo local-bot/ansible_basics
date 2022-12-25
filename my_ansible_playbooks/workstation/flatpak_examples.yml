@@ -1,0 +1,35 @@
+---
+# installing flatpka packages
+
+- name: Install spotify
+  community.general.flatpak:
+    name: com.spotify.Client
+    state: present
+
+- name: Install gedit package for current user
+  community.general.flatpak:
+    name: org.gnome.gedit
+    state: present
+    method: user
+
+- name: Install multiple packages
+  community.general.flatpak:
+    name:
+      - org.gimp.GIMP
+      - com.valvesoftware.Steam # https://flathub.org/apps/details/com.valvesoftware.Steam
+      - org.mozilla.firefox
+
+# removing flatpak packages
+
+- name: Remove the gedit flatpak
+  community.general.flatpak:
+    name: org.gnome.gedit
+    state: absent
+
+- name: Remove multiple packages
+  community.general.flatpak:
+    name:
+      - org.gimp.GIMP
+      - org.inkscape.Inkscape
+      - org.mozilla.firefox
+    state: absent
