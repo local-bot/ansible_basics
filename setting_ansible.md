@@ -9,12 +9,12 @@ for yaml format:
 touch hosts.yml
 </pre>
 
-## 2\ create configuration file
+## 2 create configuration file
 <pre>
 touch ansible.cfg
 </pre>
 
-## 3\ example ping module 
+## 3 example ping module 
 <pre>
 ansible -i inventory.yaml all -m ping
 </pre>
